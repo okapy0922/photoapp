@@ -40,7 +40,6 @@ gem 'faker'
 gem 'rails_admin'
 gem 'cancan'
 
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -52,5 +51,5 @@ group :development, :test do
   gem 'spring'
   gem 'pry-rails'
   gem 'better_errors'
-  gem 'letter_opener_web'  
-  end
+  gem 'letter_opener_web'
+end

@@ -1,15 +1,24 @@
 <div class="container">
   <div class="wrapper col-md-8 col-md-offset-2 col-sm-10">
-    <p><%= notice %></p>
-    <h1>自撮り一覧</h1>
-      <%= link_to "投稿する", new_photo_path, class: 'btn btn-default' %>
-    <% @photos.each do |photo| %>
-    <div class="row">
 
-      <p><%= photo.content %></p> <!--投稿コメントの記載する枠-->
-      <p><%= photo.user.name %></p> <!--投稿一覧にだれが投稿したかユーザネームが表示される-->
-      <%= link_to "編集", edit_photo_path(photo.id), class: 'btn btn-default btn-sm btn-success' %>
-      <%= link_to "削除", photo_path(photo.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+    <h1>投稿一覧</h1>
+      <%= link_to "投稿を作成する", new_photo_path, class: 'btn btn-default' %>
+    <% @photos.order('id').reverse.each do |photo| %>
+    <div class="row">
+      <p><div class="icon"><%= profile_img(photo.user) %></div> <%= photo.user.name %>が投稿しました</p>
+      <p>
+        <% if photo.img? %>
+          <div class="thumbnail">
+            <%= image_tag photo.img.url %>
+          </div>
+        <% end %>
+      </p>
+      <p><%= photo.content %></p
+      <%= link_to "詳細", photo_path(photo.id), class: 'btn btn-default btn-sm btn-info' %>
+      <% if current_user.id == photo.user_id %>
+        <%= link_to "編集", edit_photo_path(photo.id), class: 'btn btn-default btn-sm btn-success' %>
+        <%= link_to "削除", photo_path(photo.id), method: :delete, data: { confirm: '本当に削除していいですか？'}, class: 'btn btn-default btn-sm btn btn-danger' %>
+      <% end %>
     </div>
     <% end %>
   </div>

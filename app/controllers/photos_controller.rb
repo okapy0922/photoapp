@@ -1,7 +1,9 @@
 class PhotosController < ApplicationController
   before_action :authenticate_user! # ログインしていないときはログイン画面へ
+
   def index
     @photos = Photo.all
+  # render json: @photos @photos = Photo.allでデータを全取得後JSON形式で表示
   end
 
   def new
@@ -43,7 +45,7 @@ class PhotosController < ApplicationController
       redirect_to photos_path, notice: "削除しました"
     end
 
-    private
+    protected
 
     def set_photo
       @photo = Photo.find(params[:id])

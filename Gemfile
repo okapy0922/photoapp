@@ -33,14 +33,20 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 gem 'instagram'
 gem 'twitter-bootstrap-rails'
+gem 'bootstrap-sass'
 gem 'jquery-turbolinks'
 gem 'rails_12factor', group: :production
 gem 'devise'
 gem 'faker'
 gem 'rails_admin'
 gem 'cancan'
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-line'
+gem 'carrierwave' #画像をアップロードするgem
+gem 'rmagick' #  アップロードした画像ファイルのサイズを変更するために使用する
 
-group :development, :test do
+group :development do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -52,4 +58,5 @@ group :development, :test do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'letter_opener_web'
+  gem 'dotenv-rails'
 end

@@ -6,6 +6,10 @@ ja:
       confirmed: 'アカウントを登録しました。'
       send_instructions: 'アカウントの有効化について数分以内にメールでご連絡します。'
       send_paranoid_instructions: "あなたのメールアドレスが登録済みの場合、本人確認用のメールが数分以内に送信されます。"
+    edit:
+     Password (leave blank if you don't want to change it): "パスワード(空白は無効です。)"
+     6 characters minimum: "パスワードは6文字以上"
+     Cancel my account: "アカウントをキャンセルする"
     failure:
       already_authenticated: 'すでにログインしています。'
       inactive: 'アカウントが有効化されていません。メールに記載された手順にしたがって、アカウントを有効化してください。'

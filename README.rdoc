@@ -1,28 +1,24 @@
-== README
+自撮りの鬼　たいへんだったところ
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+１．LineのSNSログイン連携
+開発環境のIPアドレスはhttp
+httpsじゃないとできない
 
-Things you may want to cover:
+ngrokを入れて解決できるらしいけど
+調べながらできなかった
 
-* Ruby version
+２．トップアイコンリンクのリサイズ
 
-* System dependencies
+BOOTSTRAPでカラム指定したりするほうより
+("icon_mypage.png", size: '48x48')みたいにしたほうが簡単だった
+これに気づいたのはすべての機能を作ってからだったため
+次はもっと早く気付くようになりたい
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+３．画像投稿機能の作り方がちゃんと理解できていなかった
+CarrierWaveの実装
+マイページで画像設定できるようにすれば
+トップページからの画像投稿も勝手にできるもんだと
+思ってたけどそんなことなかった。
+マイページで画像アップができるようにすることと
+投稿画面で画像アップができるようにすることが
+必要だったことに全然気づけなかった

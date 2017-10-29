@@ -4,45 +4,47 @@
     padding: 5px 25px;
     background-color: #fff;
 }
-
 .navbar {
     background-color: #fff;
     color: white;
     margin-bottom: 0px;
 }
-
 .navbar-default {
   .navbar-brand {
     color: #fff;
-      &:hover {
-        color: white;
-      }
+    &:hover {
+      color: white;
+    }
   }
-}
-
   /* navbar テキストカラー */
   .navbar-nav > li > a {
     color: #ccc;
-      &:hover, &:focus {
-        color: white;
-      }
+    &:hover, &:focus {
+      color: white;
+    }
   }
-
   .navbar-nav > .open > a {
     background-color: transparent;
+    color: white;
+    &:hover, &:focus {
+      background-color: transparent;
       color: white;
-        &:hover, &:focus {
-          background-color: transparent;
-          color: white;
-        }
+    }
   }
-
-body {
-  text-align: center;
-  background-color: #fafafa;
 }
 
-.flash {
-  color: black;
-  padding-top: 15px;
+@media (max-width: 767px) {
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ccc;
+    text-align: center;
+    &:hover, &:focus {
+      color: white;
+    }
+  }
+  .navbar-default .navbar-toggle {
+    background-color: transparent;
+    &:hover, &:focus {
+      background-color: transparent;
+    }
+  }
 }

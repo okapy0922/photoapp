@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/* navbar 全体の背景色とボーダーカラー */
+/* line 3, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+.navbar-default {
+  border: 0;
+  padding: 5px 25px;
+  background-color: #fff;
+}
+
+/* line 8, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+.navbar {
+  background-color: #fff;
+  color: white;
+  margin-bottom: 0px;
+}
+
+/* line 13, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+.navbar-default {
+  /* navbar テキストカラー */
+}
+/* line 14, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+.navbar-default .navbar-brand {
+  color: #fff;
+}
+/* line 16, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+.navbar-default .navbar-brand:hover {
+  color: white;
+}
+/* line 21, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+.navbar-default .navbar-nav > li > a {
+  color: #ccc;
+}
+/* line 23, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  color: white;
+}
+/* line 27, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+.navbar-default .navbar-nav > .open > a {
+  background-color: transparent;
+  color: white;
+}
+/* line 30, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+.navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+  background-color: transparent;
+  color: white;
+}
+
+@media (max-width: 767px) {
+  /* line 38, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #ccc;
+    text-align: center;
+  }
+  /* line 41, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    color: white;
+  }
+
+  /* line 45, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+  .navbar-default .navbar-toggle {
+    background-color: transparent;
+  }
+  /* line 47, /home/vagrant/workspace/photoapp/app/assets/stylesheets/top.scss */
+  .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+    background-color: transparent;
+  }
+}

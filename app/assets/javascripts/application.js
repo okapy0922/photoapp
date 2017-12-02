@@ -13,9 +13,10 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
 //<script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-//<script type="text/javascript" src="js/bootstrap.js"></script>
 //<script type="text/javascript" src="js/instafeed.min.js"></script>
 //<script type="text/javascript" src="js/app.js"></script>
+//<script type="text/javascript" src="js/bootstrap.js"></script>

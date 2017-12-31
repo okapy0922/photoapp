@@ -1,40 +1,33 @@
 <p id="notice"><%= notice %></p>
 
 <%= form_for(@photo, url: choose_new_or_edit) do |f| %>
-  <% if @photo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= @photo.errors.count %>件のエラーがあります。</h2>
 
-      <ul>
-      <% @photo.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+
+  <%= f.error_messages! %>
+
   <%= f.text_field :content, class: 'form-control', placeholder: "コメント" %>
-    <div class="field">
-      <% if @photo.img? %>
-        <div class="thumbnail">
-          <%= image_tag @photo.img.url %>
-        </div>
-      <% end %>
-    <br>
-      <%= f.file_field :img %>
-      <%= f.hidden_field :img_cache %>
+  <div class="field">
+    <% if @photo.img? %>
+    <div class="thumbnail">
+      <%= image_tag @photo.img.url %>
     </div>
-
-    <div class="field">
-      <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
-        <% if @photo.persisted? && @photo.img? %>
-          <label>
-            <%= f.check_box :remove_img %>
-            画像を削除
-          </label>
-        <% end %>
-      </div>
+    <% end %>
     <br>
+    <%= f.file_field :img %>
+    <%= f.hidden_field :img_cache %>
+  </div>
+
+  <div class="field">
+    <!-- 既存レコード(DBに保存されている)かつ、画像が存在する場合 -->
+    <% if @photo.persisted? && @photo.img? %>
+    <label>
+      <%= f.check_box :remove_img %>
+      画像を削除
+    </label>
+    <% end %>
+  </div>
+  <br>
 
   <%= f.submit 'シェアする', class: 'btn btn-primary btn-block' %>
   <% end %>
-<%= link_to "投稿一覧にもどる", photos_path %>
+  <%= link_to "投稿一覧にもどる", photos_path %>

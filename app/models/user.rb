@@ -6,23 +6,6 @@ class User < ActiveRecord::Base
   :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable
   mount_uploader :avatar, AvatarUploader #carrierwave用の設定、deviseの設定配下に追記
   has_many :photos # has_many :hogesにより子モデル(hoge)が複数ひもづくアソシエーションを定義する
-  
-  def self.find_for_line_oauth(auth, signed_in_resource=nil) #Controller\omniauth_callback_controller内のfind_for_line_oauthメソッドの定義
-    user = User.find_by(email: auth.info.email)
-    unless user
-      user = User.new(
-        name:     auth.extra.raw_info.name,
-        provider: auth.provider,
-        uid:      auth.uid,
-        email:    auth.info.email ||= "#{auth.uid}-#{auth.provider}@example.com",
-        image_url:   auth.info.image,
-        password: Devise.friendly_token[0, 20]
-      )
-      user.skip_confirmation!
-      user.save(validate: false)
-    end
-    user
-  end
 
   def self.find_for_twitter_oauth(auth, signed_in_resource = nil)
     user = User.find_by(provider: auth.provider, uid: auth.uid)
@@ -40,7 +23,7 @@ class User < ActiveRecord::Base
     end
     user
   end
-  #ランダムなuidを作成するcreate_unique_stringメソッド
+  #（アカウント新規登録）ランダムなuidを作成するcreate_unique_stringメソッド
   def self.create_unique_string
     SecureRandom.uuid
   end

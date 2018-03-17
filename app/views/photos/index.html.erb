@@ -13,7 +13,7 @@
         </div>
         <% end %>
       </p>
-      <p><%= photo.content %></p
+      <p><%= photo.content %></p>
         <%= link_to "詳細", photo_path(photo.id), class: 'btn btn-default btn-sm btn-info' %>
         <% if current_user.id == photo.user_id %>
         <%= link_to "編集", edit_photo_path(photo.id), class: 'btn btn-default btn-sm btn-success' %>

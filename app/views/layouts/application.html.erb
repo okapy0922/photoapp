@@ -5,23 +5,27 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-        <div class="text-right">
-          <%= link_to image_tag("icon_top.png", size: '48x48'), photos_path %>
-          <%= link_to image_tag("icon_mypage.png", size: '48x48'), edit_user_registration_path %>
-        </div>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-
-    <body>
-      <header>
-        <nav class="navbar navbar-default">
-          <div class="container-fluid">
-            <div class="navbar-header">
-              <%= link_to image_tag("selfyogre.png"), root_path, class: "navbar-brand" %>
+  <body>
+    <header>
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <%= link_to image_tag("selfyogre.png"), root_path %>
+          </div>
+        </div>
+        <div class="bg-info">
+          <p class="text-muted">アカウントを作成し鬼アイコンをクリックして写真を投稿してください♪</p>
+          <div class="text-right">
+            <%= link_to image_tag("icon_top.png", size: '48x48'), photos_path %>
+            <div class="btn btn-danger">
+              <%= link_to "マイページ", edit_user_registration_path %>
             </div>
           </div>
-        </nav>
-      </header>
-      <%= yield %>
-    </body>
+        </div>
+      </nav>
+    </header>
+    <%= yield %>
+  </body>
 </html>

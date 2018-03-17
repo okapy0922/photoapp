@@ -43,13 +43,6 @@ h1.title {
 }
 
 @media (max-width: 100px) {
-  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ccc;
-    text-align: center;
-    &:hover, &:focus {
-      color: black;
-    }
-  }
   .navbar-default .navbar-toggle {
     background-color: transparent;
     &:hover, &:focus {

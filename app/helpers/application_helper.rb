@@ -8,7 +8,7 @@ module ApplicationHelper
      end
       image_tag(img_url, alt: user.name)
   end
-end 
+end
 # エラーメッセージメソッドerror_message!メソッドを定義する
 module ActionView
   module Helpers
